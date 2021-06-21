@@ -13,8 +13,8 @@ import UserEffectDemo from './pages/Hooks/UseEffectDemo'
 import DanhSachSanPham from './pages/Hooks/HookRedux/DanhSachSanPham'
 import Checkout from './pages/Checkout/Checkout'
 import Task from './pages/Task/Task'
-import TodolistRFC from './pages/Todolistx/TodolistRFC'
-import TodolistRCC from './pages/Todolistx/TodolistRCC'
+// import TodolistRFC from './pages/Todolistx/TodolistRFC'
+// import TodolistRCC from './pages/Todolist/TodolistRCC'
 import ToDoList from './pages/Todolist/ToDoList'
 
 // Thư viện giúp chuyển hướng trang
@@ -54,11 +54,14 @@ function App() {
         <HomeTemplate exact path='/login' component={Login} />
         <HomeTemplate exact path='/register' component={Register} />
         <HomeTemplate exact path='/axios' component={DemoAxios} />
-        <HomeTemplate exact path='/' component={Home} />
+        <HomeTemplate exact path='/home' component={Home} />
+        {/* <HomeTemplate exact path='/' component={Home} /> */}
 
+
+        <HomeTemplate exact path='/' component={ToDoList} />
         <HomeTemplate exact path='/todolist' component={ToDoList} />
-        <HomeTemplate exact path='/todolistrfc' component={TodolistRFC} />
-        <HomeTemplate exact path='/todolistrcc' component={TodolistRCC} />
+        {/* <HomeTemplate exact path='/todolistrfc' component={TodolistRFC} /> */}
+        {/* <HomeTemplate exact path='/todolistrcc' component={TodolistRCC} /> */}
       </Switch>
     </Router>
   );

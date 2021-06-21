@@ -15,8 +15,8 @@ import { add_task } from '../../redux/actions/types/ToDoListTypes'
 import {addTaskAction, changeThemeAction, deleteTaskAction, doneTaskAction, editTaskAction} from '../../redux/actions/ToDoListActions'
 import {arrTheme} from '../../Themes/ThemeManager'
 import axios from 'axios'
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import { Formik } from "formik";
+// import * as Yup from "yup";
 
 
 class ToDoList extends Component {
