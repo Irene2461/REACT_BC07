@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// setup redux
+import {Provider} from 'react-redux';
+// import { store } from './redux/configStore';     Dùng khi không chạy bài tập To Do List
+import {createStore} from 'redux';
+import {rootReducer} from './redux/reducers/rootReducer'
+
+// antd
+import 'antd/dist/antd.css';
+
+const store = createStore(rootReducer);
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
