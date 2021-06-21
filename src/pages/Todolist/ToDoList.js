@@ -97,6 +97,20 @@ class ToDoList extends Component {
         })
     }
 
+    rejectTask = (taskName) =>{
+        let promise = axios({
+            url: `http://svcy.myclass.vn/api/ToDoList/rejectTask?taskName=${taskName}`,
+            method:'PUT'
+        })
+        promise.then(result=>{
+            console.log(result.data);
+            this.getTaskList();
+        })
+        promise.catch(errors=>{
+            alert(errors.response?.data);
+        })
+    }
+
     handleChange = (e) =>{
         let {value,name} = e.target;
         console.log(value,name);
@@ -164,6 +178,9 @@ class ToDoList extends Component {
             return <Tr key={index}>
             <Th style={{verticalAlign: 'middle'}}>{task.taskName}</Th>
             <Th className="text-right">
+                <Button type="button" onClick={()=>{
+                    this.rejectTask(task.taskName);
+                }}><i className="fa fa-undo"></i></Button>
                 <Button type="button" onClick={()=>{
                     this.delTask(task.taskName);
                 }}><i className="fa fa-trash"></i></Button>
