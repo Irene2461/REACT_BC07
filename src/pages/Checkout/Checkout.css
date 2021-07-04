@@ -7,10 +7,11 @@
     border: none;
     border-radius: 5px;
     color: #fff;
+    text-align: center;
 }
 
 .gheDaDat{
-    background-color: rgb(225,67,67);
+    background-color: rgb(225,67,67) !important;
     cursor: no-drop;
 }
 
@@ -23,5 +24,6 @@
 }
 
 .gheMinhDat{
-    background-color: papayawhip;
+    background-color: papayawhip !important;
+    color: orange !important;
 }

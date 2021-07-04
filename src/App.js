@@ -12,13 +12,18 @@ import UseStateDemo from './pages/Hooks/UseStateDemo'
 import UserEffectDemo from './pages/Hooks/UseEffectDemo'
 import DanhSachSanPham from './pages/Hooks/HookRedux/DanhSachSanPham'
 import Checkout from './pages/Checkout/Checkout'
-import Task from './pages/Task/Task'
+import Loading from './components/Loading/Loading'
+import AdminPage from './pages/AdminPage/AdminPage'
+
 // import TodolistRFC from './pages/Todolistx/TodolistRFC'
 // import TodolistRCC from './pages/Todolist/TodolistRCC'
 import ToDoList from './pages/Todolist/ToDoList'
 
 // Thư viện giúp chuyển hướng trang
 import {createBrowserHistory} from 'history'
+import { AdminTemplate } from './templates/AdminTemplate/AdminTemplate'
+import QuanLyPhim from './pages/QuanLyPhim/QuanLyPhim'
+import ThemPhim from './pages/QuanLyPhim/ThemPhim'
 
 export const history = createBrowserHistory();
 
@@ -27,6 +32,7 @@ function App() {
 
     <Router history={history}>
       {/* <Header/> */}
+      <Loading />
       <Switch>
         <HomeTemplate component={Home} path='/home' />
         <HomeTemplate component={About} path='/about' />
@@ -54,11 +60,18 @@ function App() {
         <HomeTemplate exact path='/login' component={Login} />
         <HomeTemplate exact path='/register' component={Register} />
         <HomeTemplate exact path='/axios' component={DemoAxios} />
+
+
+        <AdminTemplate exact path='/admin' component={AdminPage} />
+        <AdminTemplate exact path='/admin/films' component={QuanLyPhim} />
+        <AdminTemplate exact path='/admin/addfilm' component={ThemPhim} />
+
+
         <HomeTemplate exact path='/home' component={Home} />
-        {/* <HomeTemplate exact path='/' component={Home} /> */}
+        <HomeTemplate exact path='/' component={Home} />
 
 
-        <HomeTemplate exact path='/' component={ToDoList} />
+        {/* <HomeTemplate exact path='/' component={ToDoList} /> */}
         <HomeTemplate exact path='/todolist' component={ToDoList} />
         {/* <HomeTemplate exact path='/todolistrfc' component={TodolistRFC} /> */}
         {/* <HomeTemplate exact path='/todolistrcc' component={TodolistRCC} /> */}

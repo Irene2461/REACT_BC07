@@ -1,7 +1,10 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 export default function Header() {
+    const {userLogin} = useSelector(state => state.UserReducer);
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <a className="navbar-brand" href="#">CYBERSOFT</a>
@@ -12,7 +15,9 @@ export default function Header() {
                     <NavLink activeClassName="bg-white text-dark" activeStyle={{border: `2px solid red`}} className="nav-link" to="/home">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink activeClassName="bg-white text-dark" activeStyle={{border: `2px solid red`}} className="nav-link" to="/login">Login</NavLink>
+                    {   
+                        userLogin.taiKhoan ? <NavLink activeClassName="bg-white text-dark" activeStyle={{border: `2px solid red`}} className="nav-link" to="/login">Hello ! {userLogin.taiKhoan}</NavLink> : <NavLink activeClassName="bg-white text-dark" activeStyle={{border: `2px solid red`}} className="nav-link" to="/login">Login</NavLink>
+                    }
                 </li>
                 <li className="nav-item">
                     <NavLink activeClassName="bg-white text-dark" activeStyle={{border: `2px solid red`}} className="nav-link" to="/register">Register</NavLink>
